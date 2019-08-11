@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            .task-btn{
+                padding: 5px 20px;
+                border: solid 1px #555;
+                background: #fff;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+            .task-btn:hover{
+                cursor: pointer;
+            }
+            form div{
+                margin-top: 20px;
+                width: 250px;
+                justify-content: space-between;
+                display: flex;
+            }
+            #task, #taskStatus{
+                width: 145px;
+                height: 25px;
+            }
+            #taskDate {
+                height: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Add Task</h1>
+            <form action="http://localhost:5000/saveTask" method="POST">
+                <div><span>Task </span><input type="text" name="taskName" id="task"></div>
+                <div><span>Date  </span><input type="date" name="dateName" id="taskDate"></div>
+                <div><span>Status </span><input type="text" name="statusName" id="taskStatus"></div>
+                <button type="submit" value="submit" class="task-btn">Submit</button>
+                <button type="button" onclick="viewTask()" class="task-btn">View Task</button>
+            </form>
+        </div>
+        <script>    
+            function viewTask(){
+                location = "../viewTask";
+            }
+        </script>
+    </body>
+</html>

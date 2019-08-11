@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            td{
+                padding: 10px;
+                border: solid 1px #555;
+            }
+            th{
+                border: solid 1px #555;
+            }
+            .addtask-btn{
+                margin-top: 20px;
+                border: solid 1px black;
+                width: 80px;
+                padding-top: 4px;
+                height: 21px;
+                padding-left: 15px;
+                border-radius: 5px
+            }
+            .addtask-btn:hover{
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                {% for i in range(0, length)%}
+                <tr>
+                    <td>{{ToDoList[i].task}}</td>
+                    <td>{{ToDoList[i].date}}</td>
+                    <td>{{ToDoList[i].status}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        <div onclick="addTask()" class="addtask-btn">Add Task</div>
+        <script>
+            function addTask(){
+                location = "../"
+            }
+        </script>
+    </body>
+</html>
